@@ -1,7 +1,10 @@
 databaseChangeLog:
   - include:
-      file: 001-flight-table-filling.sql
+      file: 001-create-table-bus_flight.sql
       relativeToChangelogFile: true
   - include:
-      file: 002-fill-table-flight.sql
+      file: 002-fill-table-bus_flight.sql
+      relativeToChangelogFile: true
+  - include:
+      file: 003-create-table-ticket.sql
       relativeToChangelogFile: true

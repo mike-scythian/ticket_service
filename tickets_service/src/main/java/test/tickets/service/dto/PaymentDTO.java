@@ -10,7 +10,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PaymentDTO {
-    private Long id;
     private String clientName;
     private Double amount;
 }

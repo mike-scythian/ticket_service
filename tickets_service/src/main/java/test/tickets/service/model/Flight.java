@@ -1,5 +1,7 @@
 package test.tickets.service.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,17 +16,18 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class Flight {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     @Column(name = "id", nullable = false)
     private Long id;
     @Column(name = "point_departure", nullable = false)
     @NonNull
     private String pointDeparture;
-    @Column(name = "pointArrival", nullable = false)
+    @Column(name = "point_arrival", nullable = false)
     @NonNull
     private String pointArrival;
     @Column(name = "departure_time")
     @NonNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
     private LocalDateTime departureTime;
     @Column(name = "price", nullable = false)
     @NonNull
@@ -33,6 +36,7 @@ public class Flight {
     @NonNull
     private Integer ticketsNumber;
     @OneToMany(mappedBy = "flight")
+    @JsonManagedReference
     private Set<Ticket> ticketSet;
 
     @NoArgsConstructor

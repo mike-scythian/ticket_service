@@ -8,7 +8,6 @@ import test.payment.service.model.Payment;
 import test.payment.service.model.PaymentStatus;
 import test.payment.service.repository.PaymentRepository;
 
-import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -19,17 +18,17 @@ public class PaymentService {
     public Long createPayment(String clientName, Double amount){
         Payment newPayment = new Payment();
         newPayment.setClientName(clientName);
+        newPayment.setStatus(PaymentStatus.NEW);
         newPayment.setAmount(amount);
         return paymentRepository.save(newPayment).getId();
-    }
-    public List<Payment> getPayments(){
-        return paymentRepository.findAll();
     }
     public PaymentStatus statusSetup(Long paymentId){
         Payment payment = paymentRepository.findById(paymentId).orElseThrow();
         payment.setStatus(PaymentStatus.randomGenerator());
-
         return paymentRepository.save(payment).getStatus();
+    }
+    public String getStatus(Long paymentId){
+        return paymentRepository.findById(paymentId).orElseThrow().getStatus().toString();
     }
     private Client stringToClient(String clientName){
         String[] name = clientName.split(" ");

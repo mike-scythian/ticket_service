@@ -10,5 +10,4 @@ import java.util.List;
 @RepositoryRestResource
 @Repository
 public interface PaymentRepository extends CrudRepository<Payment, Long> {
-
-    List<Payment> findAll();}
+}

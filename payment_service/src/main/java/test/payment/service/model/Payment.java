@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "payments")
+@Table(name = "payment")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,7 +19,7 @@ public class Payment {
     @Column(name = "id", nullable = false)
     private Long id;
     @Column(name="status")
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private PaymentStatus status;
     @Column(name = "client_name")
     private String clientName;
