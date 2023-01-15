@@ -1,0 +1,11 @@
+server:
+    port: 8091
+spring:
+    datasource:
+        username: nehanov
+        password: ${PSSWRD}
+        url: jdbc:postgresql://localhost:5432/ticket_service_db?currentSchema=ticket_service
+
+    jpa:
+        hibernate:
+            dll-auto: update

@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: 001-flight-table-filling.sql
+      relativeToChangelogFile: true
+  - include:
+      file: 002-fill-table-flight.sql
+      relativeToChangelogFile: true
