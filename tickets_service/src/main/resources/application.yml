@@ -3,10 +3,9 @@ server:
 
 spring:
   datasource:
-    username: nehanov
+    username: postgres
     password: ${PSSWRD}
     url: jdbc:postgresql://localhost:5432/ticket_service_db?currentSchema=ticket_service
-    driverClassName: org.postgresql.Driver
   jpa:
     hibernate:
       dll-auto: update

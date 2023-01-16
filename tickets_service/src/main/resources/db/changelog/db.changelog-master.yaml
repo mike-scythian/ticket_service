@@ -8,3 +8,6 @@ databaseChangeLog:
   - include:
       file: 003-create-table-ticket.sql
       relativeToChangelogFile: true
+  - include:
+      file: 004-create-ticket_seq.sql
+      relativeToChangelogFile: true
