@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    username: postgres
+    username: nehanov
     password: ${PSSWRD}
     url: jdbc:postgresql://localhost:5432/ticket_service_db?currentSchema=ticket_service
   jpa:

@@ -16,6 +16,8 @@ public class FlightService {
 
         Flight flight = flightRepository.findById(flightId).orElseThrow();
         Integer newTicketsNumber = flight.getTicketsNumber() - decrement;
+        if(newTicketsNumber < 0)
+            newTicketsNumber = 0;
         flight.setTicketsNumber(newTicketsNumber);
 
         return flightRepository.save(flight).getTicketsNumber();

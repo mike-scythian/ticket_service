@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.*;
 
 
 @SpringBootTest
-public class PaymentServiceIntegrationTest {
+public class PaymentServiceTest {
 
     @Autowired
     private PaymentService paymentService;
